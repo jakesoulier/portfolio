@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: 220, 228, 242;
+  --dark-gray: 33, 34, 38;
+  --dark-red: 185, 28, 28;
+  --bright-red: 242, 38, 38;
+}
+
+main {
+  margin: 0 auto;
+}
+
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(var(--cream)); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--dark-red));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover, body.scrolled::-webkit-scrollbar-thumb {
+  background: rgb(var(--bright-red));
+}
+
+
+
+/* Custom Tailwind */
+.bg_dark {
+  background-color: rgb(var(--dark-gray));
+}
+
+.bg_cream {
+  background-color: rgb(var(--cream));
+}
+.text_dark {
+  color: rgb(var(--dark-gray));
+}
+/* #b91c1c */
