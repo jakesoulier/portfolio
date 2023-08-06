@@ -15,23 +15,23 @@ main {
 
 
 /* Scrollbar Styles */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
-}
+} */
 /* Track */
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: rgb(var(--cream)); 
-}
+} */
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
   background: rgb(var(--dark-red));
-}
+} */
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover, body.scrolled::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb:hover, body.scrolled::-webkit-scrollbar-thumb {
   background: rgb(var(--bright-red));
-}
+} */
 
 
 
@@ -43,7 +43,28 @@ main {
 .bg_cream {
   background-color: rgb(var(--cream));
 }
+.hover\:bg_cream:hover {
+  background-color: rgb(var(--cream));
+}
+.hover\:bg_dark:hover {
+  background-color: rgb(var(--dark));
+}
+
 .text_dark {
   color: rgb(var(--dark-gray));
 }
+.text_cream {
+  color: rgb(var(--cream));
+}
+.border_cream {
+  border-color: rgb(var(--cream));
+}
+
 /* #b91c1c */
+
+
+
+/* Animation down */
+.moving {
+  transition: transform 1s ease-in-out;
+}
