@@ -49,6 +49,9 @@ main {
 .hover\:bg_dark:hover {
   background-color: rgb(var(--dark));
 }
+.hover\:border_cream:hover {
+  border-color: rgb(var(--cream));
+}
 
 .text_dark {
   color: rgb(var(--dark-gray));
