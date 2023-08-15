@@ -3,9 +3,16 @@
 // import React, { useState, useEffect, useRef } from 'react';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
+
+// import CopyPhone from './copyPhone';
+import CopyText from './copyText';
+import Card from './card';
+
+import {AiFillPhone, AiFillHtml5} from 'react-icons/ai'
 import {GrMail} from 'react-icons/gr'
-import CopyPhone from './copyPhone';
-import CopyEmail from './copyEmail';
+import { FaArrowAltCircleDown } from 'react-icons/fa'
+import { BiLogoReact } from 'react-icons/bi'
+
 
 export default function Home() {
   const [isDescriptionOnSecondPage, setDescriptionOnSecondPage] = useState(false);
@@ -41,7 +48,17 @@ export default function Home() {
                 that is looking to contribute to<br/>
                 full-stack development
                 </p>
-                <a className="bg-rose-700 hover:bg_cream hover:text-rose-700 border-8 border-transparent hover:border-rose-700 text_cream rounded-full p-7" href="/resume">Resume</a>
+                <FaArrowAltCircleDown 
+                    size="2em"
+                    className="hover-border"
+                    style={{ display: 'inline-block'}}
+                    onClick={() => { 
+                        if (mainRef.current) {
+                            // Set the scrollTop to scroll by the height of the viewport.
+                            mainRef.current.scrollTop = mainRef.current.clientHeight;
+                        }
+                    }}
+                />
             </div>
             )}
 
@@ -55,29 +72,42 @@ export default function Home() {
         </div>
 
         {/* Page 2 */}
-        <div className='snap-start h-screen bg_dark text-white'>
-            <div className="grid grid-cols-6 grid-rows-2 gap-0 font-bold text-5xl relative p-32">
-                <div className='col-span-4 row-span-2'>
-                    <p>Projects</p>
+            {/* Grid Layout */}
+            <div className="snap-start h-screen bg_dark text-white grid grid-cols-[4fr,1fr] grid-rows-1 gap-0 font-bold text-5xl relative p-32">
+                <div className='flex flex-col gap-5'>
+                    <p className='w-full'>Projects</p>  
+                    <div className='flex'>
+                        <Card
+                            languages={["React", "JavaScript", "HTML", "CSS"]}
+                        />
+                        {/* <Card />
+                        <Card /> */}
+                    </div>
+                    
+                    
                 </div>
-                <div className='col-start-5 col-end-6 row-start-1 row-end-2 flex flex-col -mr-20 mt-8 z-10 text-right'>
+                {/* Name and Contact info */}
+                {/* <div className='flex flex-col z-10 text-right'>
                     <p className="text-rose-700 bg_dark rounded-full p-3">Jake Soulier</p>
                     <div className='p-3 text-base text-center'>
-                        {/* <p>contacts</p> */}
                         <ul className=''>
                             <li className=''>
-                                <CopyEmail />
-                                {/* <span>test@gmail.com</span> */}
-                                {/* <GrMail/> */}
+                                <CopyText copy = 'example@gmail.com'>
+                                    <GrMail/>
+                                </CopyText>
                             </li>
                             <li className='flex items-center justify-center space-x-2 py-2'>
-                                <CopyPhone />
+                                <CopyText copy = '(801)111-1111'>
+                                    <AiFillPhone/>
+                                </CopyText>
                                 
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div className='col-start-6 col-end-8 row-start-1 row-end-2 flex justify-center items-center text-center'>
+                </div> */}
+                {/* selfie */}
+                <div className='flex flex-col items-start text-center'>
+                {/* <div className='col-start-6 col-end-8 row-start-1 row-end-2 flex justify-center items-center text-center'> */}
                     <a className="bg-rose-700 hover:bg_dark border-8 border-rose-700 text_cream rounded-3xl" href="/resume">
                         <div className='rounded-t-2xl border-rose-700'>
                             <Image
@@ -88,13 +118,21 @@ export default function Home() {
                                 className='rounded-t-xl border-b-8 border-rose-700'
                             />
                         </div>
-                        <span className=''>Resume</span>
+                        <div className=''>Resume</div>
                     
                     </a>
+                    <div className='text-base text-center' style={{ width: '246px' }}>
+                        <CopyText copy = 'example@gmail.com'>
+                            <GrMail/>
+                        </CopyText>
+                        <CopyText copy = '(801)111-1111'>
+                            <AiFillPhone/>
+                        </CopyText>
+                    </div>
                 </div>
+                
         
             </div>
-        </div>
     </main>
   )
 }

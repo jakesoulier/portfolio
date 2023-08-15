@@ -42,6 +42,7 @@ main {
 
 .bg_cream {
   background-color: rgb(var(--cream));
+  scroll-behavior: smooth;
 }
 .hover\:bg_cream:hover {
   background-color: rgb(var(--cream));
@@ -51,6 +52,12 @@ main {
 }
 .hover\:border_cream:hover {
   border-color: rgb(var(--cream));
+}
+.hover-border:hover {
+  border: 3px solid rgb(var(--dark-gray)); /* Adjust the border thickness and color as needed */
+  border-radius: 50%; /* This will ensure the border is circular */
+  box-sizing: border-box; /* This ensures the border is added outside of the icon, preserving its size */
+  transition: border 0.3s ease; /* Smooth transition */
 }
 
 .text_dark {
